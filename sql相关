@@ -1,0 +1,14 @@
+======================================================清库========================================
+CREATE PROCEDURE sp_DeleteAllData
+AS
+EXEC sp_MSForEachTable 'ALTER TABLE ? NOCHECK CONSTRAINT ALL'
+EXEC sp_MSForEachTable 'ALTER TABLE ? DISABLE TRIGGER ALL'
+EXEC sp_MSForEachTable 'DELETE FROM ?'
+EXEC sp_MSForEachTable 'ALTER TABLE ? CHECK CONSTRAINT ALL'
+EXEC sp_MSForEachTable 'ALTER TABLE ? ENABLE TRIGGER ALL'
+EXEC sp_MSFOREACHTABLE 'SELECT * FROM ?'
+GO
+
+EXEC 
+
+======================================================清库========================================
